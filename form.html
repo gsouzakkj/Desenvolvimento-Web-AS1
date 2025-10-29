@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Contato - Vinum D’Oro</title>
+    <link rel="stylesheet" href="estilos/style.css">
+    <script src="scripts/script.js" defer></script>
+</head>
+<body>
+    <header>
+        <img src="imagens/logo.png" alt="Logo Vinum D’Oro" class="logo">
+        <nav>
+            <ul class="menu">
+                <li><a href="index.html">Início</a></li>
+                <li><a href="form.html">Contato</a></li>
+                <li><a href="about.html">Sobre</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Entre em Contato</h2>
+        <p>Preencha o formulário abaixo e retornaremos o mais breve possível.</p>
+
+        <form action="formAction.html" method="get" onsubmit="return validarFormulario()">
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" name="nome" required placeholder="Digite seu nome completo">
+
+            <label for="email">E-mail:</label>
+            <input type="email" id="email" name="email" required placeholder="exemplo@dominio.com">
+
+            <label for="telefone">Telefone:</label>
+            <input type="tel" id="telefone" name="telefone" pattern="\\d{10,11}" required placeholder="Somente números">
+
+            <label for="mensagem">Mensagem:</label>
+            <textarea id="mensagem" name="mensagem" required placeholder="Escreva sua mensagem..."></textarea>
+
+            <input type="submit" value="Enviar Mensagem">
+        </form>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Vinum D’Oro — Desenvolvido por Gabriel Davi</p>
+    </footer>
+</body>
+</html>
