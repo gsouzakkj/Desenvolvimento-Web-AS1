@@ -1,24 +1,30 @@
 /* === Estilo global === */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap'); /* Importação da fonte Poppins */
 body {
     font-family: "Poppins", sans-serif;
-    background-color: #faf8f8;
+    background-color: #f8f8f8; /* Levemente mais claro que o original */
     margin: 0;
     padding: 0;
-    color: #2b1a2f;
+    color: #2b1a2f; /* Cor do texto principal */
+    line-height: 1.6;
 }
 
-/* === Cabeçalho e menu === */
+/* === Cabeçalho e menu (Ajuste para estilo barra de navegação e-commerce) === */
 header {
-    background-color: #5e1742;
+    background-color: #5e1742; /* Vinho/Roxo Profundo */
     color: white;
-    text-align: center;
-    padding: 15px 0;
+    padding: 10px 30px; /* Mais preenchimento nas laterais */
+    display: flex; /* Usando Flexbox para alinhar logo e menu */
+    justify-content: space-between; /* Espaço entre logo e menu */
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra para destacar a barra */
 }
 
 .logo {
     width: 90px;
+    height: auto;
+    margin: 0; /* Remove margem desnecessária */
     display: block;
-    margin: 0 auto 10px;
 }
 
 .menu {
@@ -29,72 +35,92 @@ header {
 
 .menu li {
     display: inline-block;
-    margin: 0 15px;
+    margin: 0 10px;
 }
 
 .menu a {
-    color: #f4d03f;
+    color: #b38b59; /* Usando o Dourado/Bronze para links do menu (mais elegante) */
     text-decoration: none;
-    font-weight: bold;
-    transition: color 0.3s;
+    font-weight: 500;
+    padding: 5px 10px;
+    border-radius: 4px;
+    transition: background-color 0.3s, color 0.3s;
 }
 
 .menu a:hover {
     color: #fff;
+    background-color: rgba(179, 139, 89, 0.2); /* Fundo levemente dourado no hover */
 }
 
 /* === Conteúdo === */
 main {
-    padding: 30px;
-    text-align: center;
+    max-width: 1100px; /* Largura máxima para conteúdo principal */
+    margin: 40px auto; /* Centraliza e adiciona margem superior/inferior */
+    padding: 0 30px 60px; /* Padding nas laterais e inferior */
+    text-align: center; /* Mantém o conteúdo centralizado */
 }
 
 h1, h2 {
-    color: #5e1742;
+    color: #5e1742; /* Vinho/Roxo Profundo */
+    font-weight: 700;
+    margin-bottom: 20px;
 }
 
 p {
-    font-size: 1.1em;
-    max-width: 600px;
-    margin: 10px auto;
+    font-size: 1.05em;
+    max-width: 700px;
+    margin: 15px auto;
 }
 
-/* === Formulário === */
+/* === Formulário (Ajuste estético mais limpo e profissional) === */
 form {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: stretch; /* Estica os inputs para 100% da largura do formulário */
     background: #fff;
-    padding: 25px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(94, 23, 66, 0.2);
-    width: 90%;
-    max-width: 400px;
-    margin: 0 auto;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(94, 23, 66, 0.1); /* Sombra mais suave */
+    width: 100%;
+    max-width: 450px;
+    margin: 20px auto;
+    text-align: left; /* Alinha labels e campos à esquerda dentro do form */
 }
 
 label {
-    font-weight: bold;
+    font-weight: 600;
     color: #5e1742;
-    margin-top: 10px;
+    margin-top: 15px;
+    margin-bottom: 5px;
 }
 
-input, textarea {
-    width: 90%;
-    padding: 8px;
-    margin-top: 5px;
+input:not([type="submit"]), textarea {
+    width: 100%;
+    box-sizing: border-box; /* Inclui padding e border na largura total */
+    padding: 10px;
+    margin-top: 0;
     border-radius: 5px;
-    border: 1px solid #b38b59;
+    border: 1px solid #ccc; /* Borda mais neutra */
     font-size: 1em;
+    transition: border-color 0.3s;
+}
+
+input:not([type="submit"]):focus, textarea:focus {
+    border-color: #b38b59; /* Borda dourada no foco */
+    outline: none;
 }
 
 input[type="submit"] {
-    background-color: #b38b59;
+    width: 100%;
+    background-color: #b38b59; /* Dourado/Bronze para o botão principal */
     color: white;
     border: none;
-    margin-top: 15px;
+    padding: 12px;
+    margin-top: 25px;
     cursor: pointer;
     font-weight: bold;
+    font-size: 1.05em;
+    transition: background-color 0.3s;
 }
 
 input[type="submit"]:hover {
@@ -104,12 +130,13 @@ input[type="submit"]:hover {
 /* === Rodapé === */
 footer {
     background-color: #5e1742;
-    color: white;
+    color: #fff;
     text-align: center;
-    padding: 10px;
+    padding: 15px;
     position: fixed;
     width: 100%;
     bottom: 0;
+    z-index: 100;
 }
 
 /* === Botão especial === */
@@ -117,13 +144,42 @@ button {
     background-color: #b38b59;
     color: white;
     border: none;
-    padding: 10px 20px;
-    border-radius: 6px;
-    font-size: 1em;
+    padding: 12px 25px;
+    border-radius: 8px;
+    font-size: 1.05em;
     cursor: pointer;
-    transition: 0.3s;
+    font-weight: 500;
+    margin-top: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s, transform 0.1s;
 }
 
 button:hover {
     background-color: #8f6a3b;
+    transform: translateY(-1px);
+}
+
+/* Estilo para a página formAction */
+#dadosRecebidos {
+    max-width: 600px;
+    margin: 20px auto;
+    text-align: left;
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(94, 23, 66, 0.1);
+}
+
+#dadosRecebidos ul {
+    list-style: none;
+    padding: 0;
+}
+
+#dadosRecebidos li {
+    padding: 8px 0;
+    border-bottom: 1px dashed #e0e0e0;
+}
+
+#dadosRecebidos li:last-child {
+    border-bottom: none;
 }
